@@ -18,9 +18,10 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-set $menu fuzzel --log-level=none --log-no-syslog
+set $menu fuzzel --log-level=none --log-no-syslog -D yes
 
 exec_always gammastep -l 14.5995:120.9842 -t 5500:2500 -q
+exec_always swaync
 
 ### Output configuration
 #
@@ -38,9 +39,9 @@ output * bg ~/wallpapers/kaneki.png fill
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 180 'swaylock -f -c 000000 --indicator-idle-visible' \
+          timeout 180 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible' \
           timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000 --indicator-idle-visible'
+          before-sleep 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
