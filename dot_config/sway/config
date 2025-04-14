@@ -38,10 +38,10 @@ output * bg ~/wallpapers/kaneki.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 180 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible' \
-#          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible'
+exec_always swayidle -w \
+          timeout 180 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible' \
+          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -230,8 +230,10 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 
-client.focused #ff000000 #ff000000 #ffffff00 #ff000000 
-client.unfocused #00000000 #000000 #00000000 #00000000
+client.focused #00000000 #00000000 #00000000 #00000000 #00000000 
+client.unfocused #00000000 #00000000 #00000000 #00000000 #00000000
+client.focused_inactive #00000000 #00000000 #00000000 #00000000 #00000000
+client.focused_tab_title #00000000 #00000000 #00000000 #00000000 #00000000
 
 titlebar_border_thickness 0
-titlebar_padding 0 0 
+titlebar_padding 0 0
