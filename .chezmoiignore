@@ -1,1 +1,6 @@
+*
 .config/chezmoi
+
+!.bashrc
+!.config
+!wallpapers

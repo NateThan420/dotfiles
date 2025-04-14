@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango: Fira Code Regular 9
+font pango:monospace 0.01
 
 ### Variables
 #
@@ -214,22 +214,24 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+#bar {
+#    position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%m/%d | %I:%M'; do sleep 1; done
+#    status_command while date +'%m/%d | %I:%M'; do sleep 1; done
 
-    colors {
-        statusline #ffffffff
-        background #00000000
-	focused_workspace #000000ff #00000000 #ff0000ff
-	active_workspace #000000ff #00000000 #ff0000ff
-        inactive_workspace #00000000 #00000000 #ff0000ff
-    }
-}
+#    colors {
+#        statusline #ffffffff
+#        background #00000000
+#	focused_workspace #000000ff #00000000 #ff0000ff
+#	active_workspace #000000ff #00000000 #ff0000ff
+#        inactive_workspace #00000000 #00000000 #ff0000ff
+#    }
+#}
 
-client.focused #ff0000ff #ff0000ff #ffffffff #ff0000ff 
+client.focused #ff000000 #ff000000 #ffffff00 #ff000000 
+client.unfocused #00000000 #000000 #00000000 #00000000
 
-include /etc/sway/config.d/*
+titlebar_border_thickness 0
+titlebar_padding 0 0 
