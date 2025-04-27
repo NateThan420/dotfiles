@@ -1,6 +1,12 @@
 *
-.config/chezmoi
+.config/*
+
+!.config/alacritty
+!.config/fuzzel
+!.config/ghostty
+!.config/nnn
+!.config/nvim
+!.config/sway
 
 !.bashrc
-!.config
 !wallpapers
