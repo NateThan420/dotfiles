@@ -38,12 +38,12 @@ output * bg ~/wallpapers/kaneki.png fill
 #
 # Example configuration:
 #
-exec_always swayidle -w \
-          timeout 180 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible' \
-          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible'
+#exec_always swayidle -w \
+#          timeout 180 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible' \
+#          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -i ~/wallpapers/blurred_kaneki.png --indicator-idle-visible'
 #
-# This will lock your screen after 300 seconds of inactivity, then turn off
+# This will lock your screen after 180 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
@@ -51,10 +51,16 @@ exec_always swayidle -w \
 #
 # Example configuration:
 #
-   input "1267:205:Elan_Touchpad" {
-       dwt enabled
-       tap enabled
-   }
+
+    input * {
+        repeat_delay 200
+    }
+
+    input "1267:205:Elan_Touchpad" {
+        dwt enabled
+        tap enabled
+    }
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
