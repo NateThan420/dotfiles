@@ -8,5 +8,6 @@
 !.config/nvim
 !.config/sway
 
+!.config
 !.bashrc
 !wallpapers
