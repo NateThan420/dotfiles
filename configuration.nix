@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./veriton-2680g.nix
     ];
   
   # Bootloader.
@@ -79,19 +80,6 @@
 
   };
 
-
-  # GRAPHICS
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-     # your Open GL, Vulkan and VAAPI drivers
-      vpl-gpu-rt # or intel-media-sdk for QSV
-      intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD 
-    ];
-  };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
-
-
   # Configure keymap in X11
   #services.xserver.xkb = {
   #  layout = "us";
@@ -127,9 +115,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  # Install firefox.
-  #programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -146,7 +131,7 @@
     fd
 
     chezmoi
-    microsoft-edge
+    brave
 
   ];
 
@@ -166,7 +151,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+   services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
