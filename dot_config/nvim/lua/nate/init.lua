@@ -6,8 +6,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 --Set tab width and indentation
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.cmd[[colorscheme tokyonight-night]]
