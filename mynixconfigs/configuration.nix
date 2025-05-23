@@ -60,6 +60,10 @@
     alacritty
     fuzzel
     gammastep
+
+    grim
+    slurp
+
     sway
     sway-audio-idle-inhibit
     swaybg
@@ -70,14 +74,13 @@
     wl-clipboard
     wl-clipboard-x11
     xwayland
+
     ];
 
     extraSessionCommands = ''
-	    export QT_QPA_PLATFORM=wayland
-	    export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-      export WLR_RENDERER=vulkan
+      export GDK_DISABLE=""
+      export GDK_DEBUG=""
     '';
-
   };
 
   # Configure keymap in X11
@@ -90,7 +93,7 @@
   #services.printing.enable = false;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -112,7 +115,7 @@
   users.users.nate = {
     isNormalUser = true;
     description = "Nate";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   # Allow unfree packages
@@ -120,10 +123,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
   environment.systemPackages = with pkgs; [
     fastfetch
     git
     wget
+    ghostty
 
     neovim
     ripgrep
@@ -133,12 +138,30 @@
     chezmoi
     brave
 
+    qemu
+
   ];
 
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
   ];
+
+
+  # Virtualization
+  programs = {
+    virt-manager.enable = true;
+  };
+
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
+  
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

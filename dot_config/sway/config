@@ -213,7 +213,7 @@ bindsym $mod+r mode "resize"
     #bindsym --locked f6 exec brightnessctl set 5%-
     #bindsym --locked f7 exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Status Bar:
