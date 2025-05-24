@@ -10,7 +10,6 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+--Set Color Theme
 vim.cmd[[colorscheme tokyonight-night]]
-vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-
 

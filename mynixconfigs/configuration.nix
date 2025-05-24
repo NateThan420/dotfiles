@@ -94,7 +94,6 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -128,7 +127,7 @@
     fastfetch
     git
     wget
-    ghostty
+    tmux
 
     neovim
     ripgrep
@@ -139,6 +138,7 @@
     brave
 
     qemu
+    gcc
 
   ];
 
@@ -156,6 +156,8 @@
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
+    multipass.enable = true;
+    lxd.enable = true;
   };
   
   system.autoUpgrade = {
