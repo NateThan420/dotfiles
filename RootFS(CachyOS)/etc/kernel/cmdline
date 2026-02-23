@@ -1,0 +1,2 @@
+# i5-11400
+usbhid.mousepoll=1 transparent_hugepage=madvise iommu=pt intel_iommu=on i915.force_probe=!4c8b xe.force_probe=4c8b
