@@ -1,0 +1,40 @@
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+
+
+output "HDMI-A-3" {
+    // Replace 1920 1080 with your actual resolution
+    mode "1920x1080@100.0"
+    
+    // Optional: scale 1.0
+    // Optional: position x=0 y=0
+}
+
+
+
+input {
+  mouse {
+    accel-profile "flat"
+    accel-speed 0.0
+  }
+  keyboard {
+    repeat-delay 200
+    repeat-rate 50
+    xkb {
+      options "caps:super"
+    }
+  }
+}
+
+binds {
+    Mod+X { 
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+    }
+    Mod+Ctrl+M { 
+        spawn "sh" "-c" "wl-mirror $(niri msg -j focused-output | jq -r .name)"; 
+    }
+    Mod+Shift+R { 
+        spawn "sh" "-c" "niri msg action do-reload-config && pkill qs && qs -c noctalia-shell --no-duplicate &" 
+    }
+    // Uses Super+K to show/hide the keyboard
+    Mod+K { spawn "sh" "-c" "pkill wvkbd-deskintl || wvkbd-deskintl"; }
+}
