@@ -9,6 +9,12 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+
+
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+
+export WLR_RENDERER=vulkan
