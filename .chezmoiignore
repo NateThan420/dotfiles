@@ -5,7 +5,6 @@
 !.config/fuzzel
 !.config/ghostty
 !.config/nnn
-!.config/nvim
 !.config/sway
 !.config/mpv
 !.config/niri
