@@ -1,5 +1,7 @@
 [general]
 import = ["/home/nate/.config/alacritty/themes/monokai_charcoal_white.toml"]
+live_config_reload = true
+working_directory = "None"
 
 [env]
 TERM = "xterm-256color"
@@ -19,7 +21,3 @@ multiplier = 3
 
 [colors]
 draw_bold_text_with_bright_colors = true
-
-[general]
-live_config_reload = true
-working_directory = "None"
