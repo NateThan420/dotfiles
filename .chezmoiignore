@@ -10,7 +10,6 @@
 !.config/niri
 !.config/noctalia
 !.config/fish/conf.d/myfish.conf
-!.config/Pictures/Wallpapers/*
 
 !.config
 !.bashrc
